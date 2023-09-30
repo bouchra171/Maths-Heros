@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+.header {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #5A7B8C, #45606D, #27333D);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+   
+}
+
+
+
+
+
+@keyframes handwriting {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 32px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+    
+    animation: handwriting 2s forwards;
+    opacity: 0; 
+}
+
+
+.navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9); 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.navbar a {
+    font-weight: 500;
+    color:#ff816e;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s; 
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar a:hover {
+    color: #f7fafc;  
+    background: rgba(86, 123, 140, 0.1); 
+}
+
+.navbar a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #5A7B8C;  
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+.navbar.active {
+    display: flex;
+}
+
+.menu-button {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease; 
+}
+
+.menu-button.active { 
+    transform: rotate(90deg);
+}
+
+
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
+    .navbar {
+        position: static; 
+        background: transparent; 
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin: 0;
+        border-radius: 0; 
+    }
+
+    .navbar a {
+        margin: 0 15px;
+        padding: 0;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+    
+    
+
+    
+    
+}
